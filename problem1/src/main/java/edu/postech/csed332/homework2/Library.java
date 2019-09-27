@@ -2,6 +2,9 @@ package edu.postech.csed332.homework2;
 
 import java.util.List;
 import java.util.Set;
+import org.json.*;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * A container class for all collections (that eventually contain all
@@ -32,7 +35,18 @@ public final class Library {
      * @param fileName the file where to save the library
      */
     public void saveLibraryToFile(String fileName) {
-        // TODO implement this
+        JSONObject lib = new JSONObject();
+        lib.put("library", this);
+
+        try(FileWriter writer = new FileWriter(fileName))
+        {
+            writer.write(this.toString());
+            writer.flush();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
     
     /**

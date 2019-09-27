@@ -1,6 +1,8 @@
 package edu.postech.csed332.homework2;
 
+import java.util.ArrayList;
 import java.util.List;
+import org.json.*;
 
 /**
  * A book contains the title and the author(s), each of which is
@@ -31,7 +33,15 @@ public final class Book extends Element {
      * @param stringRepr the JSON string representation
      */
     public Book(String stringRepr) {
-        // TODO implement this
+        String tempTitle;
+        List<String> tempAuthors = new ArrayList<>();
+        JSONObject jsonBook = new JSONObject((stringRepr));
+        tempTitle=jsonBook.getString("title");
+        for (int i=0; i<jsonBook.getJSONArray("authors").length(); i++){
+            tempAuthors.add(jsonBook.getJSONArray("authors").getString(i));
+        }
+        this.title=tempTitle;
+        this.authors=tempAuthors;
     }
 
     /**
@@ -41,8 +51,15 @@ public final class Book extends Element {
      * @return the string representation
      */
     public String getStringRepresentation() {
-        // TODO implement this
-        return null;
+        JSONObject jsonBook = new JSONObject();
+        jsonBook.put("title", this.title);
+        JSONArray jsonAuthors = new JSONArray();
+        for (int i=0; i<authors.size();i++){
+            jsonAuthors.put(authors.get(i));
+        }
+        jsonBook.put("authors", jsonAuthors);
+
+        return jsonBook.toString();
     }
 
     /**
@@ -58,8 +75,13 @@ public final class Book extends Element {
      * @return the list of collections
      */
     public List<Collection> getContainingCollections() {
-        // TODO implement this
-        return null;
+        ArrayList<Collection> fatherCollections = new ArrayList<>();
+        Collection aux = this.getParentCollection();
+        while (aux!=null){
+            fatherCollections.add(aux);
+            aux=aux.getParentCollection();
+        }
+        return fatherCollections;
     }
 
     /**

@@ -40,7 +40,7 @@ public final class Collection extends Element {
      * @return string representation of this collection
      */
     public String getStringRepresentation() {
-        // TODO implement this
+
         return null;
     }
 
