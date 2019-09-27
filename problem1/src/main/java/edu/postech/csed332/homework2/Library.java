@@ -1,10 +1,16 @@
 package edu.postech.csed332.homework2;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.lang.reflect.Array;
+import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import org.json.*;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
 /**
  * A container class for all collections (that eventually contain all
@@ -17,7 +23,7 @@ public final class Library {
      * Builds a new, empty library.
      */
     public Library() {
-        // TODO implement this
+        collections = new ArrayList<>();
     }
 
     /**
@@ -26,7 +32,17 @@ public final class Library {
      * @param fileName the file from where to restore the library.
      */
     public Library(String fileName) {
-        // TODO implement this
+        ArrayList<Collection> tempCollections = new ArrayList<>();
+        try
+        {
+            JSONObject jsonLibrary = new JSONObject(new FileReader(fileName));
+            for (int i=0; i<jsonLibrary.getJSONArray("collections").length();i++){
+                tempCollections.add(Collection.restoreCollection(jsonLibrary.getJSONArray("collection").get(i).toString()));
+            }
+        }
+        catch(FileNotFoundException e){e.printStackTrace();}
+        catch(IOException e){e.printStackTrace();}
+        catch(Exception e){e.printStackTrace();}
     }
 
     /**
@@ -35,12 +51,16 @@ public final class Library {
      * @param fileName the file where to save the library
      */
     public void saveLibraryToFile(String fileName) {
-        JSONObject lib = new JSONObject();
-        lib.put("library", this);
+        JSONObject jsonLibrary = new JSONObject();
+        JSONArray jsonCollections = new JSONArray();
+        for (int i=0; i<collections.size(); i++){
+            jsonCollections.put(collections.get(i).getStringRepresentation());
+        }
+        jsonLibrary.put("collections", jsonCollections);
 
         try(FileWriter writer = new FileWriter(fileName))
         {
-            writer.write(this.toString());
+            writer.write(jsonLibrary.toString());
             writer.flush();
         }
         catch(IOException e)

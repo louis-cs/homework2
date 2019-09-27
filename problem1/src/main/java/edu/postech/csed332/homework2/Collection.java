@@ -3,6 +3,7 @@ package edu.postech.csed332.homework2;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,8 +33,25 @@ public final class Collection extends Element {
      * @param stringRepr the string representation
      */
     public static Collection restoreCollection(String stringRepr) {
-        // TODO implement this
-        return null;
+        String newName;
+        ArrayList<Element> newElements = new ArrayList<>();
+
+        JSONObject jsonCollection = new JSONObject(stringRepr);
+        newName = jsonCollection.getString("name");
+        JSONArray jsonElements = jsonCollection.getJSONArray("elements");
+        for (int i=0; i<jsonElements.length();i++){
+            if (jsonElements.get(i) instanceof Book){
+                newElements.add(new Book(jsonElements.get(i).toString()));
+            }
+            if (jsonElements.get(i) instanceof Collection){
+                newElements.add(restoreCollection(jsonElements.get(i).toString()));
+            }
+        }
+        Collection newCollection = new Collection(newName);
+        for (int i=0;i<newElements.size();i++){
+            newCollection.addElement(newElements.get(i));
+        }
+        return newCollection;
     }
 
     /**

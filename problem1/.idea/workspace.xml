@@ -4,6 +4,8 @@
     <list default="true" id="1c36399f-70a3-43d5-8d18-364ed4f9ab0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Collection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Collection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/JSonIO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Library.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
