@@ -1,5 +1,9 @@
 package edu.postech.csed332.homework2;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +23,7 @@ public final class Collection extends Element {
      */
     public Collection(String name) {
         this.name = name;
-        // TODO write more code if necessary
+        elements = new ArrayList<>();
     }
 
     /**
@@ -40,8 +44,20 @@ public final class Collection extends Element {
      * @return string representation of this collection
      */
     public String getStringRepresentation() {
+        JSONObject jsonCollection = new JSONObject();
+        jsonCollection.put("name", this.name);
+        JSONArray jsonElements = new JSONArray();
+        for (int i=0; i<elements.size();i++){
+            if (elements.get(i) instanceof Book){
+                jsonElements.put(((Book) elements.get(i)).getStringRepresentation());
+            }
+            else if (elements.get(i) instanceof Collection){
+                jsonElements.put(((Collection) elements.get(i)).getStringRepresentation());
+            }
+        }
+        jsonCollection.put("elements", jsonElements);
 
-        return null;
+        return jsonCollection.toString();
     }
 
     /**
@@ -53,8 +69,13 @@ public final class Collection extends Element {
      * @return true on success, false on fail
      */
     public boolean addElement(Element element) {
-        // TODO implement this
-        return false;
+        boolean noParent = false;
+        if (element.getParentCollection()!=null){
+            noParent=true;
+            elements.add(element);
+            element.setParentCollection(this);
+        }
+        return noParent;
     }
 
     /**
@@ -66,8 +87,13 @@ public final class Collection extends Element {
      * @return true on success, false on fail
      */
     public boolean deleteElement(Element element) {
-        // TODO implement this
-        return false;
+        boolean foundElement = false;
+        if (elements.contains(element)){
+            foundElement=true;
+            element.setParentCollection(null);
+            elements.remove(element);
+        }
+        return foundElement;
     }
 
     /**
