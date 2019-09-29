@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.postech.csed332.homework2.LibraryTest" time="0" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.postech.csed332.homework2.LibraryTest" time="0.002" tests="5" errors="3" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="D:\Program files\JavaDK\bin"/>
-    <property name="sun.java.command" value="C:\Users\louis\AppData\Local\Temp\surefire292474050910066857\surefirebooter4161109281614831870.jar C:\Users\louis\AppData\Local\Temp\surefire292474050910066857 2019-09-28T14-10-41_476-jvmRun1 surefire619514811364459107tmp surefire_08990094428254657977tmp"/>
+    <property name="sun.java.command" value="C:\Users\louis\AppData\Local\Temp\surefire3651904332553255215\surefirebooter10961914578524774623.jar C:\Users\louis\AppData\Local\Temp\surefire3651904332553255215 2019-09-29T23-51-04_325-jvmRun1 surefire8184621222318805429tmp surefire_0814111544524829009tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\Documents\Course Notes\Software Design Methods\homework2\problem1\target\test-classes;D:\Documents\Course Notes\Software Design Methods\homework2\problem1\target\classes;C:\Users\louis\.m2\repository\org\json\json\20140107\json-20140107.jar;C:\Users\louis\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\louis\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter\5.5.2\junit-jupiter-5.5.2.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\louis\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\louis\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\louis\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.5.2\junit-jupiter-params-5.5.2.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\louis\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\louis\AppData\Local\Temp\surefire292474050910066857\surefirebooter4161109281614831870.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\louis\AppData\Local\Temp\surefire3651904332553255215\surefirebooter10961914578524774623.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="12.0.2+10"/>
@@ -59,4 +59,29 @@
     <property name="java.class.version" value="56.0"/>
   </properties>
   <testcase name="testfindBooksNull" classname="edu.postech.csed332.homework2.LibraryTest" time="0"/>
+  <testcase name="testCreateLibrary" classname="edu.postech.csed332.homework2.LibraryTest" time="0.001">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at edu.postech.csed332.homework2.LibraryTest.testCreateLibrary(LibraryTest.java:43)
+</error>
+    <system-out><![CDATA[current collection being restores is 0
+current collection being restores is 1
+]]></system-out>
+  </testcase>
+  <testcase name="testFindBooks" classname="edu.postech.csed332.homework2.LibraryTest" time="0.001">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at edu.postech.csed332.homework2.LibraryTest.testFindBooks(LibraryTest.java:52)
+</error>
+    <system-out><![CDATA[current collection being restores is 0
+current collection being restores is 1
+]]></system-out>
+  </testcase>
+  <testcase name="testFindBooksByAuthor" classname="edu.postech.csed332.homework2.LibraryTest" time="0">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at edu.postech.csed332.homework2.LibraryTest.testFindBooksByAuthor(LibraryTest.java:59)
+</error>
+    <system-out><![CDATA[current collection being restores is 0
+current collection being restores is 1
+]]></system-out>
+  </testcase>
+  <testcase name="testSaveLibraryToFile" classname="edu.postech.csed332.homework2.LibraryTest" time="0"/>
 </testsuite>

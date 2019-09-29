@@ -1,14 +1,12 @@
 package edu.postech.csed332.homework2;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.util.*;
 
 import org.json.*;
-import java.io.FileWriter;
-import java.io.IOException;
+
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -25,6 +23,7 @@ public final class Library {
         collections = new ArrayList<>();
     }
 
+
     /**
      * Builds a new library and restores its contents from a file.
      *
@@ -32,16 +31,28 @@ public final class Library {
      */
     public Library(String fileName) {
         ArrayList<Collection> tempCollections = new ArrayList<>();
+        String line = null;
+        String jsonText = "";
         try
         {
-            JSONObject jsonLibrary = new JSONObject(new FileReader(fileName));
+            FileReader fileReader = new FileReader(fileName);
+            BufferedReader bufferedReader = new BufferedReader((fileReader));
+            while((line = bufferedReader.readLine()) != null) {
+                jsonText+=line;
+            }
+            bufferedReader.close();
+            JSONObject jsonLibrary = new JSONObject(jsonText);
             for (int i=0; i<jsonLibrary.getJSONArray("collections").length();i++){
-                tempCollections.add(Collection.restoreCollection(jsonLibrary.getJSONArray("collection").get(i).toString()));
+                System.out.println("current collection being restores is " + i);
+                tempCollections.add(Collection.restoreCollection(jsonLibrary.getJSONArray("collections").get(i).toString()));
             }
         }
         catch(FileNotFoundException e){e.printStackTrace();}
-        catch(IOException e){e.printStackTrace();}
-        catch(Exception e){e.printStackTrace();}
+        catch (IOException e) { e.printStackTrace();
+        }
+
+        Library newLibrary = new Library();
+        newLibrary.getCollections().addAll(tempCollections);
     }
 
     /**
@@ -50,10 +61,12 @@ public final class Library {
      * @param fileName the file where to save the library
      */
     public void saveLibraryToFile(String fileName) {
+
         JSONObject jsonLibrary = new JSONObject();
         JSONArray jsonCollections = new JSONArray();
         for (int i=0; i<collections.size(); i++){
-            jsonCollections.put(collections.get(i).getStringRepresentation());
+            JSONObject bo = new JSONObject((collections.get(i)).getStringRepresentation());
+            jsonCollections.put(bo);
         }
         jsonLibrary.put("collections", jsonCollections);
 
@@ -97,7 +110,7 @@ public final class Library {
                 i++;
             }
         }
-        if ((foundCollection==false) && (i==this.getCollections().size()-1)){
+        if ((foundCollection==false) && (i==this.getCollections().size())){
             return null;
         }
         else {

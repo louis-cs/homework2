@@ -3,16 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="1c36399f-70a3-43d5-8d18-364ed4f9ab0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Collection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Collection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/BookTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/CollectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/CollectionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/LibraryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Collection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Collection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Library.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/Collection.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/Collection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/Collection.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/Collection.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/Library.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/Library.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/Library.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/Library.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/edu.postech.csed332.homework2/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.postech.csed332.homework2.BookTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.postech.csed332.homework2.BookTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.postech.csed332.homework2.CollectionTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.postech.csed332.homework2.CollectionTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.postech.csed332.homework2.LibraryTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.postech.csed332.homework2.LibraryTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.postech.csed332.homework2.BookTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.postech.csed332.homework2.BookTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.postech.csed332.homework2.CollectionTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.postech.csed332.homework2.CollectionTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.postech.csed332.homework2.LibraryTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.postech.csed332.homework2.LibraryTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/postech/csed332/homework2/LibraryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/edu/postech/csed332/homework2/LibraryTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

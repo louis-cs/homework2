@@ -39,16 +39,13 @@ public final class Collection extends Element {
         JSONObject jsonCollection = new JSONObject(stringRepr);
         newName = jsonCollection.getString("name");
         JSONArray jsonElements = jsonCollection.getJSONArray("elements");
-        System.out.println("added a name");
-        System.out.println("elements size is " + jsonElements.length());
+
         for (int i=0; i<jsonElements.length();i++){
             if ((((JSONObject)jsonElements.get(i)).has("title"))){
                 newElements.add(new Book(jsonElements.get(i).toString()));
-                System.out.println("added a book");
             }
             if ((((JSONObject)jsonElements.get(i)).has("name"))){
                 newElements.add(restoreCollection(jsonElements.get(i).toString()));
-                System.out.println("added a collection");
             }
         }
         Collection newCollection = new Collection(newName);

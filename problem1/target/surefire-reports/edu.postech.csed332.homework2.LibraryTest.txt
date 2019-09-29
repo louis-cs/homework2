@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: edu.postech.csed332.homework2.LibraryTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in edu.postech.csed332.homework2.LibraryTest
+Tests run: 5, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in edu.postech.csed332.homework2.LibraryTest
+testCreateLibrary  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException
+	at edu.postech.csed332.homework2.LibraryTest.testCreateLibrary(LibraryTest.java:43)
+
+testFindBooks  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException
+	at edu.postech.csed332.homework2.LibraryTest.testFindBooks(LibraryTest.java:52)
+
+testFindBooksByAuthor  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at edu.postech.csed332.homework2.LibraryTest.testFindBooksByAuthor(LibraryTest.java:59)
+
