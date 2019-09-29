@@ -39,12 +39,16 @@ public final class Collection extends Element {
         JSONObject jsonCollection = new JSONObject(stringRepr);
         newName = jsonCollection.getString("name");
         JSONArray jsonElements = jsonCollection.getJSONArray("elements");
+        System.out.println("added a name");
+        System.out.println("elements size is " + jsonElements.length());
         for (int i=0; i<jsonElements.length();i++){
-            if (jsonElements.get(i) instanceof Book){
+            if ((((JSONObject)jsonElements.get(i)).has("title"))){
                 newElements.add(new Book(jsonElements.get(i).toString()));
+                System.out.println("added a book");
             }
-            if (jsonElements.get(i) instanceof Collection){
+            if ((((JSONObject)jsonElements.get(i)).has("name"))){
                 newElements.add(restoreCollection(jsonElements.get(i).toString()));
+                System.out.println("added a collection");
             }
         }
         Collection newCollection = new Collection(newName);
@@ -67,10 +71,14 @@ public final class Collection extends Element {
         JSONArray jsonElements = new JSONArray();
         for (int i=0; i<elements.size();i++){
             if (elements.get(i) instanceof Book){
-                jsonElements.put(((Book) elements.get(i)).getStringRepresentation());
+                JSONObject bo = new JSONObject(((Book) elements.get(i)).getStringRepresentation());
+                jsonElements.put(bo);
+                //jsonElements.put(((Book) elements.get(i)).getStringRepresentation());
             }
             else if (elements.get(i) instanceof Collection){
-                jsonElements.put(((Collection) elements.get(i)).getStringRepresentation());
+                JSONObject bo = new JSONObject(((Collection) elements.get(i)).getStringRepresentation());
+                jsonElements.put(bo);
+                //jsonElements.put(((Collection) elements.get(i)).getStringRepresentation());
             }
         }
         jsonCollection.put("elements", jsonElements);
@@ -88,7 +96,7 @@ public final class Collection extends Element {
      */
     public boolean addElement(Element element) {
         boolean noParent = false;
-        if (element.getParentCollection()!=null){
+        if (element.getParentCollection()==null){
             noParent=true;
             elements.add(element);
             element.setParentCollection(this);

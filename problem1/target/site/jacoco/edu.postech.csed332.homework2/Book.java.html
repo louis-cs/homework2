@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Book.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">homework2</a> &gt; <a href="index.source.html" class="el_package">edu.postech.csed332.homework2</a> &gt; <span class="el_source">Book.java</span></div><h1>Book.java</h1><pre class="source lang-java linenums">package edu.postech.csed332.homework2;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.json.*;
+
+/**
+ * A book contains the title and the author(s), each of which is
+ * represented as a string. A book can be exported to and import
+ * from a string representation in JSON (https://www.json.org/).
+ * Using the string, you should be able to construct a book object.
+ */
+public final class Book extends Element {
+    private String title;
+    private List&lt;String&gt; authors;
+
+    /**
+     * Builds a book with the given title and author(s).
+     *
+     * @param title   the title of the book
+     * @param authors the author(s) of the book
+     */
+<span class="fc" id="L23">    public Book(String title, List&lt;String&gt; authors) {</span>
+<span class="fc" id="L24">        this.title = title;</span>
+<span class="fc" id="L25">        this.authors = authors;</span>
+        // TODO write more code if necessary
+<span class="fc" id="L27">    }</span>
+
+    /**
+     * Builds a book from the string representation in JSON, which
+     * contains the title and author(s) of the book.
+     *
+     * @param stringRepr the JSON string representation
+     */
+<span class="fc" id="L35">    public Book(String stringRepr) {</span>
+        String tempTitle;
+<span class="fc" id="L37">        List&lt;String&gt; tempAuthors = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L38">        JSONObject jsonBook = new JSONObject((stringRepr));</span>
+<span class="fc" id="L39">        tempTitle=jsonBook.getString(&quot;title&quot;);</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        for (int i=0; i&lt;jsonBook.getJSONArray(&quot;authors&quot;).length(); i++){</span>
+<span class="fc" id="L41">            tempAuthors.add(jsonBook.getJSONArray(&quot;authors&quot;).getString(i));</span>
+        }
+<span class="fc" id="L43">        this.title=tempTitle;</span>
+<span class="fc" id="L44">        this.authors=tempAuthors;</span>
+<span class="fc" id="L45">    }</span>
+
+    /**
+     * Returns the JSON string representation of this book. The string
+     * representation contains the title and author(s) of the book.
+     *
+     * @return the string representation
+     */
+    public String getStringRepresentation() {
+<span class="fc" id="L54">        JSONObject jsonBook = new JSONObject();</span>
+<span class="fc" id="L55">        jsonBook.put(&quot;title&quot;, this.title);</span>
+<span class="fc" id="L56">        JSONArray jsonAuthors = new JSONArray();</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        for (int i=0; i&lt;authors.size();i++){</span>
+<span class="fc" id="L58">            jsonAuthors.put(authors.get(i));</span>
+        }
+<span class="fc" id="L60">        jsonBook.put(&quot;authors&quot;, jsonAuthors);</span>
+
+<span class="fc" id="L62">        return jsonBook.toString();</span>
+    }
+
+    /**
+     * Returns all the collections that this book belongs to directly
+     * and indirectly, starting from the bottom-level collection.
+     * &lt;p&gt;
+     * For example, suppose that &quot;Computer Science&quot; is a top collection,
+     * &quot;Operating Systems&quot; is a collection under &quot;Computer Science&quot;, and
+     * &quot;Linux Kernel&quot; is a book under &quot;Operating System&quot;. Then, this
+     * method for &quot;The Linux Kernel&quot; returns the list of the collections
+     * (Operating System, Computer Science), starting from the bottom.
+     *
+     * @return the list of collections
+     */
+    public List&lt;Collection&gt; getContainingCollections() {
+<span class="fc" id="L78">        ArrayList&lt;Collection&gt; fatherCollections = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L79">        Collection aux = this.getParentCollection();</span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        while (aux!=null){</span>
+<span class="fc" id="L81">            fatherCollections.add(aux);</span>
+<span class="fc" id="L82">            aux=aux.getParentCollection();</span>
+        }
+<span class="fc" id="L84">        return fatherCollections;</span>
+    }
+
+    /**
+     * Returns the title of the book.
+     *
+     * @return the title
+     */
+    public String getTitle() {
+<span class="fc" id="L93">        return title;</span>
+    }
+
+    /**
+     * Returns the author(s) of the book.
+     *
+     * @return the author(s)
+     */
+    public List&lt;String&gt; getAuthors() {
+<span class="fc" id="L102">        return authors;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

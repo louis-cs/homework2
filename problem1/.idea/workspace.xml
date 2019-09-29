@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="1c36399f-70a3-43d5-8d18-364ed4f9ab0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Collection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Collection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/JSonIO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/postech/csed332/homework2/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/BookTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/CollectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/CollectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/postech/csed332/homework2/LibraryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Collection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Collection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/postech/csed332/homework2/Library.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

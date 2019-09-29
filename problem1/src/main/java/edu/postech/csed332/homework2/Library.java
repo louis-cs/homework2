@@ -4,9 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Array;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+
 import org.json.*;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -87,8 +86,32 @@ public final class Library {
      * @return a set of books
      */
     public Set<Book> findBooks(String collection) {
-        // TODO implement this
-        return null;
+        HashSet<Book> books = new HashSet<>();
+        int i=0;
+        boolean foundCollection = false;
+        Collection thisCollection = new Collection("");
+        while ((foundCollection==false) && (i<this.getCollections().size())){
+            if (this.getCollections().get(i).getName().equals(collection)){
+                foundCollection=true;
+                thisCollection = this.getCollections().get(i);
+                i++;
+            }
+        }
+        if ((foundCollection==false) && (i==this.getCollections().size()-1)){
+            return null;
+        }
+        else {
+            for (i = 0; i < thisCollection.getElements().size(); i++){
+                if (thisCollection.getElements().get(i) instanceof Book){
+                    books.add((Book)thisCollection.getElements().get(i));
+                    i++;
+                }
+                else if (thisCollection.getElements().get(i) instanceof Collection){
+                    books.addAll(findBooks(((Collection)thisCollection.getElements().get(i)).getName()));
+                }
+            }
+        }
+        return books;
     }
 
     /**
@@ -101,8 +124,19 @@ public final class Library {
      * @return Return the set of books written by the given author
      */
     public Set<Book> findBooksByAuthor(String author) {
-        // TODO implement this
-        return null;
+        HashSet<Book> authorBooks = new HashSet<>();
+        for(int i=0; i<this.getCollections().size();i++){
+            Collection currentCollection = this.getCollections().get(i);
+            HashSet<Book> currentCollectionBooks = (HashSet)findBooks(currentCollection.getName());
+            Iterator<Book> bookIterator = currentCollectionBooks.iterator();
+            while (bookIterator.hasNext()){
+                Book currentBook = bookIterator.next();
+                if (currentBook.getAuthors().contains(author)){
+                    authorBooks.add(currentBook);
+                }
+            }
+        }
+        return authorBooks;
     }
 
     /**

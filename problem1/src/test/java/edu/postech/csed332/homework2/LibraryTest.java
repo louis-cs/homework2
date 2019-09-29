@@ -11,6 +11,11 @@ public class LibraryTest {
         Assertions.assertNull(lib.findBooks("any"));
     }
 
+    @Test
+    public void testSaveLibraryToFile(){
+        Library library = new Library();
+
+    }
     /*
      * TODO: add  test methods to achieve at least 80% statement coverage of Library.
      * Each test method should have appropriate JUnit assertions to test a single behavior
